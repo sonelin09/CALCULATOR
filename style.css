@@ -1,5 +1,19 @@
 .monitor {
+    display: flex;
     border: 2px;
     border-style: solid;
     color: black;
+    width: 400px;
+    height: 100px;
+    font-size: 50px;
+}
+
+.digit {
+    width: 100px;
+    height: 100px;
+}
+
+.operate {
+    width: 100px;
+    height: 100px;
 }
