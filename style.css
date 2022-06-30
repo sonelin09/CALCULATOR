@@ -10,10 +10,14 @@
 
 .digit {
     display: flex;
-    flex-direction: row;
     width: 100px;
     height: 100px;
     font-size: 45px;
+}
+
+.digits-row {
+    display: flex;
+
 }
 
 .operate {
