@@ -27,14 +27,14 @@ for(let i=0; i<digit.length; i++) {
 //按下數字鍵要執行的
 let num = [];
 let temp;
-const monitor = document.getElementsByClassName("monitor");
+const monitor = document.getElementById("monitor1");
 function populate() {
     num.push(Number(this.textContent));
     console.log(num);
     //陣列轉字串+去逗點後，顯示於label
     temp = num.join().replace(/,/g, "");
     console.log(temp);
-    monitor[0].textContent = temp;
+    monitor.textContent = temp;
     //monitor.textContent = toString(num);
     
 }
@@ -45,7 +45,8 @@ for(let j = 0; j < operators.length; j++) {
     operators[j].addEventListener("click", operate);
 }
 
-let operator = "";
+let operator = [];
+let numWithOperator = [];
 //第一個數
 let num1;
 //把現有數值紀錄後清除
@@ -53,18 +54,19 @@ function storeClear() {
     num1 = Number(temp);
     num = [];
     temp = "";
-    monitor[0].textContent = `${num1} ${operator}`;
+    monitor.textContent = `${num1} ${operator}`;
 }
 function operate() {
-    operator = this.textContent;
-    storeClear();
+    operator.push(this.textContent);
+    monitor.textContent = `${temp} ${operator}`;
+    console.log(operator);
 }
 
 //清除鍵
 const clearBtn = document.getElementById("clear");
 clearBtn.addEventListener("click", clear);
 function clear() {
-    monitor[0].textContent = '0';
+    monitor.textContent = '0';
     num = [];
     temp = "";
 }
@@ -77,6 +79,6 @@ function back() {
     console.log(num);
     temp = num.join().replace(/,/g, "");
     console.log(temp);
-    monitor[0].textContent = temp;
+    monitor.textContent = temp;
 }
 
