@@ -48,6 +48,7 @@ for(let j = 0; j < operators.length; j++) {
 let operator = "";
 //第一個數
 let num1;
+//把現有數值紀錄後清除
 function storeClear() {
     num1 = Number(temp);
     num = [];
@@ -55,19 +56,8 @@ function storeClear() {
     monitor[0].textContent = `${num1} ${operator}`;
 }
 function operate() {
-    if(this.textContent === "+") {
-        operator = "+";
-        storeClear();
-    }else if(this.textContent === "-") {
-        operator = "-";
-        storeClear();
-    }else if(this.textContent === "x") {
-        operator = "x";
-        storeClear();
-    }else if(this.textContent === "/") {
-        operator = "/";
-        storeClear();
-    }
+    operator = this.textContent;
+    storeClear();
 }
 
 //清除鍵
@@ -77,5 +67,16 @@ function clear() {
     monitor[0].textContent = '0';
     num = [];
     temp = "";
+}
+
+//倒退鍵
+const backSpace = document.getElementById("backspace");
+backSpace.addEventListener("click", back);
+function back() {
+    num.splice(num.length - 1, 1);
+    console.log(num);
+    temp = num.join().replace(/,/g, "");
+    console.log(temp);
+    monitor[0].textContent = temp;
 }
 
