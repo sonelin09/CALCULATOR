@@ -58,7 +58,7 @@ function storeClear() {
 
 //用來儲存目前的運算子
 function operate() {
-    operator.push(this.textContent);
+    operator[0] = this.textContent;
     monitor2.textContent = `${temp} ${operator}`;
     console.log(operator);
 }
@@ -80,16 +80,20 @@ function clear() {
 const backSpace = document.getElementById("backspace");
 backSpace.addEventListener("click", back);
 function back() {
+    if(num1 === 0 && operator.length ===0) {
+
+    }else {
+        num.splice(num.length - 1, 1);
+        console.log(num);
+        temp = num.join().replace(/,/g, "");
+        console.log(temp);
+        monitor.textContent = temp;
+    }
     
-    num.splice(num.length - 1, 1);
-    console.log(num);
-    temp = num.join().replace(/,/g, "");
-    console.log(temp);
-    monitor.textContent = temp;
 }
 
 //儲存第二個數
-let num2;
+let num2 = 0;
 //儲存計算結果
 let num3;
 
