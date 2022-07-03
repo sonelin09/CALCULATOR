@@ -82,3 +82,18 @@ function back() {
     monitor.textContent = temp;
 }
 
+//等於鍵
+let equal =document.getElementById("equal");
+equal.addEventListener("click", outcome);
+/*
+function outcome() {
+    switch(operator) {
+        case "+":
+            num2 = num1 + num2
+            break;
+        case "-":
+            num2 = num1 + num2
+            break;
+    }
+}
+*/
