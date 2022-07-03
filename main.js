@@ -76,7 +76,7 @@ const backSpace = document.getElementById("backspace");
 backSpace.addEventListener("click", back);
 function back() {
     console.log(num);
-    if(num[0] === 0 && operator.length ===0) {
+    if(num.length === 0) {
 
     }else {
         if(num.length === 1) {
