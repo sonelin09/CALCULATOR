@@ -9,19 +9,13 @@ let num = [];
 let temp;
 const monitor = document.getElementById("monitor1");
 function populate() {
-    if(operator.length === 0 ) {
-        addNumber(this);
+    if(num[0] === 0) {
+        num[0] = Number(this.textContent);
+        temp = num.join().replace(/,/g, "");
+        monitor.textContent = temp;
     }else {
-        if(count === 0) {
-            storeClear(); 
-            addNumber(this);
-        }else {
-            addNumber(this);
-        }
-        
-    }
-    
-    
+        addNumber(this);
+    }  
 }
 
 //紀錄數字
@@ -60,6 +54,7 @@ function storeClear() {
 function operate() {
     operator[0] = this.textContent;
     monitor2.textContent = `${temp} ${operator}`;
+    storeClear();
     console.log(operator);
 }
 
@@ -80,14 +75,22 @@ function clear() {
 const backSpace = document.getElementById("backspace");
 backSpace.addEventListener("click", back);
 function back() {
-    if(num1 === 0 && operator.length ===0) {
+    console.log(num);
+    if(num[0] === 0 && operator.length ===0) {
 
     }else {
-        num.splice(num.length - 1, 1);
-        console.log(num);
-        temp = num.join().replace(/,/g, "");
-        console.log(temp);
-        monitor.textContent = temp;
+        if(num.length === 1) {
+            num[0] = 0;
+            temp = num.join().replace(/,/g, "");
+            monitor.textContent = temp;
+        }else {
+            num.splice(num.length - 1, 1);
+            console.log(num);
+            temp = num.join().replace(/,/g, "");
+            console.log(temp);
+            monitor.textContent = temp;
+        }
+        
     }
     
 }
