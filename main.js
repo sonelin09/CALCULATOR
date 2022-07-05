@@ -144,6 +144,7 @@ function outcome() {
                 break;
             case "/":
                 if(num2 === 0) {
+                    alert("賣鬧! 數學老師有說過，不能除以0!")
                     clear();
                 }else {
                     num1 = parseFloat((num1 / num2).toFixed(5))
