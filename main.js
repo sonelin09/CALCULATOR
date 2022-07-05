@@ -30,7 +30,7 @@ function addNumber(nowNum) {
 }
 
 
-//運算符
+//運算符號
 const operators = document.getElementsByClassName("operator");
 for(let j = 0; j < operators.length; j++) {
     operators[j].addEventListener("click", operate);
@@ -143,8 +143,12 @@ function outcome() {
                 reset();
                 break;
             case "/":
-                num1 = parseFloat((num1 / num2).toFixed(5))
-                reset();
+                if(num2 === 0) {
+                    clear();
+                }else {
+                    num1 = parseFloat((num1 / num2).toFixed(5))
+                    reset();
+                }
                 break;
         }
     }
