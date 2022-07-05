@@ -50,12 +50,31 @@ function storeClear() {
     count ++;
 }
 
-//用來儲存目前的運算子
+//按下運算符號後會執行的
 function operate() {
-    operator[0] = this.textContent;
-    monitor2.textContent = `${temp} ${operator}`;
-    storeClear();
-    console.log(operator);
+    if(operator.length === 1 && num.length === 0){//已輸入第一個數字，只是要修改運算符號
+        operator[0] = this.textContent;
+        monitor2.textContent = `${num1} ${operator}`;
+        console.log(`第一狀況:${operator}`);
+    }else if(num1 != 0 && num.length != 0) {//輸入第二個數字後沒按=，而是繼續按別的運算符號
+        outcome();
+        operator[0] = this.textContent;
+        monitor2.textContent = `${num1} ${operator}`;
+        console.log(`第二狀況:${operator}`);
+    }else {
+        if(num1 === 0){//尚未計算時or歸零後or上次計算結果為0
+            operator[0] = this.textContent;
+            storeClear();
+            console.log(`第3-1狀況:${operator}`);
+        }else {//按過=後的結果，繼續記錄運算符號
+            operator[0] = this.textContent;
+            monitor2.textContent = `${num1} ${operator}`;
+            console.log(`第3-2狀況:${operator}`);
+        }        
+        monitor2.textContent = `${num1} ${operator}`;
+        
+    }
+    
 }
 
 //清除鍵
@@ -103,51 +122,39 @@ let num3;
 //等於鍵
 let equal = document.getElementById("equal");
 equal.addEventListener("click", outcome);
-//計算結果
+//計算結果(把結果存回num1，其餘東西歸零)
 function outcome() {
-    /*
-    console.log(`operator: ${operator}`);
-    console.log(`num2: ${num2}`);
-    */
     if(isNaN(temp) === false) {
         num2 = Number(temp);
         switch(operator[0]) {
             case "+":
                 //num2 = parseFloat((num1 + num2).toFixed(5))
-                num[0] = parseFloat((num1 + num2).toFixed(5))
-                temp = num.join().replace(/,/g, "")
-                monitor.textContent = temp
-                //allClear()
+                num1 = parseFloat((num1 + num2).toFixed(5))
+                console.log(num1);
+                console.log(num2);
+                reset();
                 break;
             case "-":
-                num[0] = parseFloat((num1 - num2).toFixed(5))
-                temp = num.join().replace(/,/g, "")
-                monitor.textContent = temp
-                //allClear()
+                num1 = parseFloat((num1 - num2).toFixed(5))
+                reset();
                 break;
             case "x":
-                num[0] = parseFloat((num1 * num2).toFixed(5))
-                temp = num.join().replace(/,/g, "")
-                monitor.textContent = temp
-                //allClear()
+                num1 = parseFloat((num1 * num2).toFixed(5))
+                reset();
                 break;
             case "/":
-                num[0] = parseFloat((num1 / num2).toFixed(5))
-                temp = num.join().replace(/,/g, "")
-                monitor.textContent = temp
-                //allClear()
+                num1 = parseFloat((num1 / num2).toFixed(5))
+                reset();
                 break;
         }
     }
 }
 
-//歸零
-function allClear() {
-    num = [];
+//顯示運算結果、清空運算子陣列
+function reset() {
+    monitor.textContent = num1;
     temp = "";
-    num1 = 0;
+    num = [];
     num2 = 0;
     operator = [];
-    count = 0;
-    monitor2.textContent = "";
 }
