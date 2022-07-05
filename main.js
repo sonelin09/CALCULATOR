@@ -113,24 +113,29 @@ function outcome() {
         num2 = Number(temp);
         switch(operator[0]) {
             case "+":
-                num3 = parseFloat((num1 + num2).toFixed(5)) 
-                monitor.textContent = `${num3}`
-                allClear()
+                //num2 = parseFloat((num1 + num2).toFixed(5))
+                num[0] = parseFloat((num1 + num2).toFixed(5))
+                temp = num.join().replace(/,/g, "")
+                monitor.textContent = temp
+                //allClear()
                 break;
             case "-":
-                num3 = parseFloat((num1 - num2).toFixed(5)) 
-                monitor.textContent = `${num3}`
-                allClear()
+                num[0] = parseFloat((num1 - num2).toFixed(5))
+                temp = num.join().replace(/,/g, "")
+                monitor.textContent = temp
+                //allClear()
                 break;
             case "x":
-                num3 = parseFloat((num1 * num2).toFixed(5)) 
-                monitor.textContent = `${num3}`
-                allClear()
+                num[0] = parseFloat((num1 * num2).toFixed(5))
+                temp = num.join().replace(/,/g, "")
+                monitor.textContent = temp
+                //allClear()
                 break;
             case "/":
-                num3 = parseFloat((num1 / num2).toFixed(5)) 
-                monitor.textContent = `${num3}`
-                allClear()
+                num[0] = parseFloat((num1 / num2).toFixed(5))
+                temp = num.join().replace(/,/g, "")
+                monitor.textContent = temp
+                //allClear()
                 break;
         }
     }
