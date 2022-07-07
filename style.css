@@ -43,6 +43,12 @@ html, body {
     
 }
 
+.digits-first {
+    width: 400px;
+    display: flex;
+    align-self: center;
+}
+
 .digits-row {
     display: flex;
     justify-content: center;
@@ -56,6 +62,12 @@ html, body {
 
 .other {
     width: 100px;
+    height: 100px;
+    font-size: 45px;
+}
+
+.other-first {
+    width: 200px;
     height: 100px;
     font-size: 45px;
 }
