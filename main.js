@@ -158,6 +158,7 @@ function outcome() {
 //顯示運算結果、清空運算子陣列
 function reset() {
     monitor.textContent = num1;
+    monitor2.textContent = num1;
     temp = "";
     num = [];
     num2 = 0;
