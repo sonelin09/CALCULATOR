@@ -12,7 +12,7 @@ html, body {
 
 
 #monitor1 {
-    display: inline-block;
+    display: flex;
     border: 2px;
     border-style: solid;
     color: black;
@@ -20,7 +20,8 @@ html, body {
     height: 100px;
     font-size: 50px;
     margin: 0 auto;
-    text-align: right;
+    align-items: center;
+    justify-content: flex-end;
 }
 #monitor2 {
     display: flex;
@@ -31,6 +32,8 @@ html, body {
     height: 50px;
     font-size: 30px;
     margin: 0 auto;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .digit {
