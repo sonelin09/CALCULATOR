@@ -10,8 +10,9 @@ html, body {
     justify-content: center;
 }
 
+
 #monitor1 {
-    display: flex;
+    display: inline-block;
     border: 2px;
     border-style: solid;
     color: black;
@@ -19,6 +20,7 @@ html, body {
     height: 100px;
     font-size: 50px;
     margin: 0 auto;
+    text-align: right;
 }
 #monitor2 {
     display: flex;
