@@ -164,3 +164,25 @@ function reset() {
     num2 = 0;
     operator = [];
 }
+
+//小數點
+let dotCount = 0;
+const dot = document.getElementById("dot");
+dot.addEventListener("click", addDot);
+function addDot() {
+    let isDot = false;
+    for(let i = 0; i<num.length; i++) {
+        if(/\./.test(num[i]) === true) {
+            console.log("有.");
+            isDot = true;
+            break;
+        }else {
+            
+        }
+    } 
+    if(isDot === false) {
+        console.log("沒有.");
+        num.push(".");
+    }
+    
+}
