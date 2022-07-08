@@ -9,7 +9,7 @@ let num = [];
 let temp;
 const monitor = document.getElementById("monitor1");
 function populate() {
-    if(num[0] === 0) {
+    if(num[0] === 0 && num[1] != ".") {
         num[0] = Number(this.textContent);
         temp = num.join().replace(/,/g, "");
         monitor.textContent = temp;
@@ -182,7 +182,15 @@ function addDot() {
     } 
     if(isDot === false) {
         console.log("沒有.");
-        num.push(".");
+        if(num.length === 0) {
+            num.push(0);
+            num.push(".");
+            temp = num.join().replace(/,/g, "");
+            monitor.textContent = temp;
+        }else {
+            num.push(".");
+        }
+        
     }
     
 }
