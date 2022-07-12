@@ -164,6 +164,13 @@ html, body {
     height: 0;
     border-bottom: 50px solid #ffd885;
     border-left: 50px solid transparent;
-    right: 30px;
+    right: 80px;
     top: 15px;
+}
+
+.credit {
+    position: absolute;
+    font-size: 10px;
+    top: 50px;
+    right: 30px;
 }
