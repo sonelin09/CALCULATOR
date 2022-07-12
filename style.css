@@ -89,9 +89,10 @@ html, body {
     font-size: 35px;
     border-radius: 15px;
     border-style: solid;
-    border-color: #BEBEBE #F0F0F0 #E0E0E0 #BEBEBE;
+    border-color: #6DAFCB #7CC7E8 #6FBCDD #6DAFCB;
     border-width: 5px 20px 30px 10px;
     transform-style: perserve-3d;
+    background-color: #7CC7E8;
 }
 
 .operator:active {
@@ -105,9 +106,10 @@ html, body {
     font-size: 35px;
     border-radius: 15px;
     border-style: solid;
-    border-color: #BEBEBE #F0F0F0 #E0E0E0 #BEBEBE;
+    border-color: #6DAFCB #7CC7E8 #6FBCDD #6DAFCB;
     border-width: 5px 20px 30px 10px;
     transform-style: perserve-3d;
+    background-color: #7CC7E8;
 }
 
 .other:active {
@@ -121,9 +123,10 @@ html, body {
     font-size: 35px;
     border-radius: 15px;
     border-style: solid;
-    border-color: #BEBEBE #F0F0F0 #E0E0E0 #BEBEBE;
+    border-color: #CB8498 #F19DB5 #E68CA4 #CB8498;
     border-width: 5px 20px 30px 10px;
     transform-style: perserve-3d;
+    background-color: #F19DB5;
 }
 
 .other-first:active {
