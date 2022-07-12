@@ -9,6 +9,8 @@ html, body {
     flex-direction: column;
     height: 100%;
     justify-content: center;
+    perspective: 500px;
+    perspective-origin: center;
 }
 /*
 .under {
@@ -62,7 +64,13 @@ html, body {
     border-radius: 15px;
     border-style: solid;
     border-color: #BEBEBE #F0F0F0 #E0E0E0 #BEBEBE;
-    border-width: 5px 20px 40px 10px;
+    border-width: 5px 20px 30px 10px;
+    transform-style: perserve-3d;
+}
+
+.digit:active {
+    background-color: rgb(255, 208, 107);
+    transform: translate3d(0, 10px, 0);
 }
 
 .digits-first {
@@ -83,7 +91,13 @@ html, body {
     border-radius: 15px;
     border-style: solid;
     border-color: #BEBEBE #F0F0F0 #E0E0E0 #BEBEBE;
-    border-width: 5px 20px 40px 10px;
+    border-width: 5px 20px 30px 10px;
+    transform-style: perserve-3d;
+}
+
+.operator:active {
+    background-color: rgb(177, 194, 250);
+    transform: translate3d(0, 10px, 0);
 }
 
 .other {
@@ -93,7 +107,13 @@ html, body {
     border-radius: 15px;
     border-style: solid;
     border-color: #BEBEBE #F0F0F0 #E0E0E0 #BEBEBE;
-    border-width: 5px 20px 40px 10px;
+    border-width: 5px 20px 30px 10px;
+    transform-style: perserve-3d;
+}
+
+.other:active {
+    background-color: rgb(177, 194, 250);
+    transform: translate3d(0, 10px, 0);
 }
 
 .other-first {
@@ -103,5 +123,11 @@ html, body {
     border-radius: 15px;
     border-style: solid;
     border-color: #BEBEBE #F0F0F0 #E0E0E0 #BEBEBE;
-    border-width: 5px 20px 40px 10px;
+    border-width: 5px 20px 30px 10px;
+    transform-style: perserve-3d;
+}
+
+.other-first:active {
+    background-color: antiquewhite;
+    transform: translate3d(0, 10px, 0);
 }
